@@ -1,86 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tugas</title>
-    <link rel="stylesheet" href="./assets/style.css">
-</head>
-<body>
-    <div class="form-identitas">
-        <span class="blur">
-            <form id="identitas">
-        <div class="all-box">
-    <h1>Rokok Enak</h1>
-    <div class="font1">
-        <label for="name">Siapa nama anda?</label>
-    </div>
-    <input type="text" id="name" name="name">
-    <div>
-        <label for="umur">berapa umur anda?</label>
-    </div>
-    <input type="number" id="umur" name="umur">
-    <div>
-        <div>Apa jenis kelamin anda?</div>
-        <input type="radio" id="laki-laki" name="kelamin" value="laki-laki">
-        <label for="laki-laki">laki-laki</label>
-        
-        <input type="radio" id="perempuan" name="kelamin" value="perempuan">
-        <label for="perempuan">perempuan</label>
-    </div>
-    <div>
-        <div>Apakah anda perokok?</div>
-        <input type="radio" id="Yes" name="perokok" value="Ya">
-        <label for="Yes">Ya</label>
-         
-        <input type="radio" id="No" name="perokok" value="Tidak">
-        <label for="No">Tidak</label>
-        
-    </div>
-    <div>
-        <div>Jika anda perokok,rokok apa yang anda pernah coba?</div>
-        <div>
-            <input type="checkbox" id="Gudang" value="Gudang Garam Filter" name="typeRokok">
-            <label for="Gudang">Gudang Garam Filter</label>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/tugas.css" />
+  </head>
+  <body>
+    <form id="form-login">
+      <div class="container">
+        <div class="login">
+          <h1>LOGIN DULU</h1>
+          <div class="content">
+            <div>
+              <h2>email lu bang 😁:</h2>
+              <input type="email" name="email" />
+            </div>
+            <div>
+              <h3>password lu bang jangan sampai lupa:</h3>
+              <input type="password" name="password" />
+            </div>
+            <button type="submit">login bro</button>
+          </div>
         </div>
-        <div>
-            <input type="checkbox" id="Lucky" value="Lucky Strike" name="typeRokok">
-            <label for="Lucky">Lucky Strike</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Marlboro" value="Marlboro" name="typeRokok">
-            <label for="Marlboro">Marlboro</label>
-        </div>
-        <div>
-            <input type="checkbox" id="Esse" value="Esse" name="typeRokok" >
-            <label for="Esse">Esse</label>
-        </div>
-    </div>
-    <button id="save" type="submit">save</button>
-    <table border="1" style="border-collapse: collapse; margin-top: 30px;">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Gender</th>
-                <th>Is respondent smoker?</th>
-                <th>Cigar variant that respondent have try</th>
-            </tr>
-        </thead>
-        <tbody id="list-identitas">
-            <tr>
-                <td>Admin</td>
-                <td>28</td>
-                <td>Laki-laki</td>
-                <td>Ya</td>
-                <td>Gudang Garam Filter;Marlboro</td>
-            </tr>
-        </tbody>
-    </table>
-</div>
-</form>
-</div>
-<script src="./assets/post-get.js">   
-</script>
-</body>
+      </div>
+    </form>
+    <script src="./assets/script.js"></script>
+  </body>
 </html>

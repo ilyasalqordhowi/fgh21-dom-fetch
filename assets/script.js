@@ -16,6 +16,7 @@ form.addEventListener("submit", (event) => {
     response.json().then((data) => {
       if (data.success === true) {
         window.alert(data.message);
+        window.location.href = "survey.html";
       } else {
         window.alert(data.message);
       }
