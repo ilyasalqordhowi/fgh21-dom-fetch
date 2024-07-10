@@ -1,19 +1,16 @@
+const endPoint = "https://st2lww-8888.csb.app/ilyas/data";
 const form = document.getElementById("identitas");
 
-const table = document.getElementById("list-identitas");
-console.log();
-
-restAPI();
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const name = event.target.name.value;
-  const Age = event.target.umur.value;
-  const Gender = event.target.kelamin.value;
+  const age = event.target.umur.value;
+  const gender = event.target.kelamin.value;
   const smokers = event.target.perokok.value;
-  console.log(name);
-  console.log(Age);
-  console.log(Gender);
-  console.log(smokers);
+  // console.log(name);
+  // console.log(Age);
+  // console.log(Gender);
+  // console.log(smokers);
   const cigarette = document.querySelectorAll('input[type="checkbox"]:checked');
 
   let cigarettes = "";
@@ -24,14 +21,17 @@ form.addEventListener("submit", (event) => {
     }
   }
   console.log(cigarettes);
-  const formData = new URLSearchParams();
-  formData.append("name", name);
-  formData.append("age", Age);
-  formData.append("gender", Gender);
-  formData.append("isSmoker", smokers);
-  formData.append("cigarVariant", cigarettes);
-
-  fetch("https://st2lww-8888.csb.app/ilyas/data", {
+  if (name === "" || age <= 0 || gender === "" || smokers === "") {
+    window.alert("MASUKIN DULU BRO!!");
+  } else {
+    const formData = new URLSearchParams();
+    formData.append("name", name);
+    formData.append("age", age);
+    formData.append("gender", gender);
+    formData.append("isSmoker", smokers);
+    formData.append("cigarVariant", cigarettes);
+  }
+  fetch(endPoint, {
     method: "POST",
     body: formData,
   }).then((response) => {
@@ -45,16 +45,34 @@ form.addEventListener("submit", (event) => {
   });
 });
 
-const endPoint = "https://st2lww-8888.csb.app/ilyas/data";
-async function restAPI() {
-  const tr = document.createElement("tr");
-  const tdAll = document.createElement("td");
-  const api = await fetch(endPoint);
-  const data = await api.json();
-  for (let i = 0; i < data.length; i++) {
-    const result = "name : " + data[i].name;
-  }
-
-  tr.appendChild(tdAll);
-  table.appendChild(result);
+const table = document.getElementById("list-identitas");
+async function getApi() {
+  const response = await fetch(endPoint);
+  const data = await response.json();
+  table.innerHTML = "";
+  data.results.forEach((element) => {
+    const tr = document.createElement("tr");
+    const tdName = document.createElement("td");
+    const tdAge = document.createElement("td");
+    const tdGender = document.createElement("td");
+    const tdSmokers = document.createElement("td");
+    const tdType = document.createElement("td");
+    tdName.textContent = element.name;
+    tdAge.textContent = element.age;
+    tdGender.textContent = element.gender;
+    if (element.isSmoker) {
+      tdSmokers.textContent = document.getElementById("Yes").value;
+    } else {
+      tdSmokers.textContent = document.getElementById("No").value;
+    }
+    tdType.textContent = element.cigarVariant.join("; ");
+    console.log(tdType);
+    tr.appendChild(tdName);
+    tr.appendChild(tdAge);
+    tr.appendChild(tdGender);
+    tr.appendChild(tdSmokers);
+    tr.appendChild(tdType);
+    table.appendChild(tr);
+  });
 }
+getApi();
