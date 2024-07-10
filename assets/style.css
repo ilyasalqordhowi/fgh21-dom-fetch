@@ -7,7 +7,7 @@ body {
 }
 
 .form-identitas {
-  background-image: url(./assets/Killua\ Zoldyck\ -\ Hunter\ x\ Hunter.jpg);
+  background-image: url(./img/Killua\ Zoldyck\ -\ Hunter\ x\ Hunter.jpg);
   display: flex;
   flex-direction: column;
   width: 600px;
@@ -54,3 +54,4 @@ body {
   background-color: antiquewhite;
   width: 100px;
 }
+/* login */

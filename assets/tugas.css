@@ -1,0 +1,66 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px;
+  background-color: black;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(./img/style.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  width: 375px;
+  height: 500px;
+  padding: 30px;
+  border-radius: 10%;
+}
+.login {
+  width: 100%;
+  border-radius: 10px;
+  padding: 10px;
+  align-items: center;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(1, 0, 1, 0.344),
+    rgba(1, 0, 1, 0.566)
+  );
+  z-index: 1;
+  color: white;
+}
+.container .login .content {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: aqua;
+  gap: 10px;
+  color: black;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(1, 1, 0, 0.344),
+    rgba(1, 1, 0, 0.566)
+  );
+}
+.container .login .content div {
+  display: flex;
+  flex-direction: column;
+}
+.container .login .content div input {
+  border-radius: 10px;
+  border: 1px black;
+  padding: 10px;
+}
+.container .login .content button {
+  width: 100px;
+  height: 20px;
+  border: 1px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.container .login .content button:hover {
+  background-color: antiquewhite;
+}
