@@ -53,5 +53,6 @@ body {
   border-radius: 100px;
   background-color: antiquewhite;
   width: 100px;
+  cursor: pointer;
 }
 /* login */

@@ -30,19 +30,19 @@ form.addEventListener("submit", (event) => {
     formData.append("gender", gender);
     formData.append("isSmoker", smokers);
     formData.append("cigarVariant", cigarettes);
-  }
-  fetch(endPoint, {
-    method: "POST",
-    body: formData,
-  }).then((response) => {
-    response.json().then((data) => {
-      if (data.succes === true) {
-        window.alert(data.message);
-      } else {
-        window.alert(data.message);
-      }
+    fetch(endPoint, {
+      method: "POST",
+      body: formData,
+    }).then((response) => {
+      response.json().then((data) => {
+        if (data.succes === true) {
+          window.alert(data.message);
+        } else {
+          window.alert(data.message);
+        }
+      });
     });
-  });
+  }
 });
 
 const table = document.getElementById("list-identitas");
@@ -50,22 +50,22 @@ async function getApi() {
   const response = await fetch(endPoint);
   const data = await response.json();
   table.innerHTML = "";
-  data.results.forEach((element) => {
+  data.results.forEach((item) => {
     const tr = document.createElement("tr");
     const tdName = document.createElement("td");
     const tdAge = document.createElement("td");
     const tdGender = document.createElement("td");
     const tdSmokers = document.createElement("td");
     const tdType = document.createElement("td");
-    tdName.textContent = element.name;
-    tdAge.textContent = element.age;
-    tdGender.textContent = element.gender;
-    if (element.isSmoker) {
+    tdName.textContent = item.name;
+    tdAge.textContent = item.age;
+    tdGender.textContent = item.gender;
+    if (item.isSmoker) {
       tdSmokers.textContent = document.getElementById("Yes").value;
     } else {
       tdSmokers.textContent = document.getElementById("No").value;
     }
-    tdType.textContent = element.cigarVariant.join("; ");
+    tdType.textContent = item.cigarVariant.join("; ");
     console.log(tdType);
     tr.appendChild(tdName);
     tr.appendChild(tdAge);
