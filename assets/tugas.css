@@ -3,7 +3,11 @@ body {
   align-items: center;
   justify-content: center;
   margin: 100px;
-  background-color: black;
+  background-image: url(./img/lumba-lumba.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+  top: 0;
 }
 .container {
   display: flex;

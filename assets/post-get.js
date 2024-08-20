@@ -46,7 +46,9 @@ form.addEventListener("submit", (event) => {
 });
 
 const table = document.getElementById("list-identitas");
+const loadingElement = document.getElementById("loding");
 async function getApi() {
+  // loadingElement.classList.remove("hide");
   const response = await fetch(endPoint);
   const data = await response.json();
   table.innerHTML = "";
@@ -57,7 +59,7 @@ async function getApi() {
     const tdGender = document.createElement("td");
     const tdSmokers = document.createElement("td");
     const tdType = document.createElement("td");
-    tdName.textContent = item.name;
+    tdName.textContent = item.name + "Nazhif";
     tdAge.textContent = item.age;
     tdGender.textContent = item.gender;
     if (item.isSmoker) {
